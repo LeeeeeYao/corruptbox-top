@@ -1,6 +1,3 @@
-import LanguageSwitcher from '@/components/LanguageSwitcher'
-import GameContainer from '@/components/GameContainer'
-import Link from 'next/link'
 import ClientPage from '@/components/ClientPage'
 import { getDictionary } from '@/lib/dictionary'
 
