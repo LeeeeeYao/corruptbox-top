@@ -9,6 +9,7 @@ export default function LanguageSwitcher({ lang }) {
     en: 'English',
     es: 'Español',
     tl: 'Tagalog',
+    
     hi: 'हिन्दी'
   }
   
