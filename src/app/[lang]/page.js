@@ -1,6 +1,7 @@
 import { getDictionary } from '@/lib/dictionary'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import GameContainer from '@/components/GameContainer'
+import Link from 'next/link';
 
 export async function generateMetadata({ params }) {
   const { lang } = await params;
@@ -117,8 +118,8 @@ export default async function Home({ params }) {
           <p className="text-lg">{dict.footer}</p>
         </div>
         <div className="absolute bottom-0 right-4 flex items-center h-full text-sm space-x-4">
-          <a href="/privacy-policy" className="hover:underline">Privacy Policy</a>
-          <a href="/terms-of-service" className="hover:underline">Terms of Service</a>
+          <Link href="/privacy-policy" className="hover:underline">Privacy Policy</Link>
+          <Link href="/terms-of-service" className="hover:underline">Terms of Service</Link>
         </div>
       </footer>
     </div>
