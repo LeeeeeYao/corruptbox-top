@@ -2,11 +2,10 @@ export default function PrivacyPolicy() {
   return (
     <div className="container mx-auto px-4 py-16">
       <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
-      <p className="text-lg mb-4">Last updated:December 25, 2024</p>
+      <p className="text-lg mb-4">Last updated: December 25, 2024</p>
 
       <p className="text-lg mb-4">
-      At Corruptbox, accessible from https://corruptbox.top/, we prioritize the privacy of our visitors. This Privacy Policy document outlines the types of information collected by Sprunki and how we utilize it.
-
+        At Corruptbox, accessible from https://corruptbox.top/, we prioritize the privacy of our visitors. This Privacy Policy document outlines the types of information collected by Sprunki and how we utilize it.
       </p>
 
       <h2 className="text-2xl font-bold mb-4">Overview</h2>
@@ -35,7 +34,7 @@ export default function PrivacyPolicy() {
 
       <h2 className="text-2xl font-bold mb-4">Purpose of Data Collection</h2>
       <p className="text-lg mb-4">
-        The primary purpose of collecting your data is to process your orders and improve our website's functionality and services.
+        The primary purpose of collecting your data is to process your orders and improve our website&apos;s functionality and services.
       </p>
 
       <h2 className="text-2xl font-bold mb-4">Data Sharing</h2>
@@ -43,7 +42,7 @@ export default function PrivacyPolicy() {
         Corruptbox respects your privacy. We do not share your personal data with any third parties, except as necessary to process your orders or comply with legal requirements.
       </p>
 
-      <h2 className="text-2xl font-bold mb-4">Children's Privacy</h2>
+      <h2 className="text-2xl font-bold mb-4">Children&apos;s Privacy</h2>
       <p className="text-lg mb-4">
         Our services are not intended for children under the age of 18. We do not knowingly collect personal information from children.
       </p>
@@ -56,7 +55,7 @@ export default function PrivacyPolicy() {
 
       <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
       <p className="text-lg">
-        If you have any questions, concerns, or feedback about our Privacy Policy, please contact us， We are committed to addressing your inquiries and will strive to respond as promptly as possible.
+        If you have any questions, concerns, or feedback about our Privacy Policy, please contact us. We are committed to addressing your inquiries and will strive to respond as promptly as possible.
       </p>
     </div>
   );

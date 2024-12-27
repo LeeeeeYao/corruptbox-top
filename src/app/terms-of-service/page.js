@@ -23,12 +23,12 @@ export default function TermsOfService() {
 
       <h2 className="text-2xl font-bold mb-4">Disclaimer</h2>
       <p className="text-lg mb-4">
-        The materials on Corruptbox's website are provided on an 'as is' basis. Corruptbox makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties.
+        The materials on Corruptbox website are provided on an as is basis. Corruptbox makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties.
       </p>
 
       <h2 className="text-2xl font-bold mb-4">Limitations</h2>
       <p className="text-lg mb-4">
-        In no event shall Corruptbox or its suppliers be liable for any damages arising out of the use or inability to use the materials on Corruptbox's website.
+        In no event shall Corruptbox or its suppliers be liable for any damages arising out of the use or inability to use the materials on Corruptbox website.
       </p>
 
       <h2 className="text-2xl font-bold mb-4">Modifications</h2>
