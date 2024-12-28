@@ -61,7 +61,7 @@ export default function ClientPage({ lang, dict }) {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/s9bVpybskC0"
+              src="https://www.youtube.com/embed/suNJc1JQP-k?si=za6msrr5mSIgEXiM"
               title="How to Play Corruptbox"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
