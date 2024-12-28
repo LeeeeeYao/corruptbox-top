@@ -50,7 +50,7 @@ export default function ClientPage({ lang, dict }) {
         <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-gray-900 to-transparent"></div>
       </header>
 
-      <ShareBar dict={dict} />
+      <ShareBar />
 
       <main className="container mx-auto px-4 py-16 space-y-24">
         {/* How to Play Section */}

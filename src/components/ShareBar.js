@@ -13,7 +13,7 @@ import {
   WhatsappIcon
 } from 'react-share'
 
-export default function ShareBar({ dict }) {
+export default function ShareBar() {
   const shareUrl = 'https://corruptbox.top'
   const title = 'Corruptbox - Create Music Like Never Before'
   const hashtags = ['Corruptbox', 'MusicCreation', 'Incredibox', 'Sprunki']
