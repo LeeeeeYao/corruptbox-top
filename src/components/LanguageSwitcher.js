@@ -5,19 +5,27 @@ import { useRouter } from 'next/navigation'
 export default function LanguageSwitcher({ lang }) {
   const router = useRouter()
   
+  const handleLanguageChange = (e) => {
+    const newLang = e.target.value
+    console.log('Switching language to:', newLang)
+    router.push(`/${newLang}`)
+  }
+  
   const languages = {
     en: 'English',
     es: 'Español',
     tl: 'Tagalog',
-    hi: 'हिन्दी'
+    hi: 'हिन्दी',
+    ja: '日本語',
+    ko: '한국어'
   }
   
   return (
-    <div className="absolute top-4 right-4 z-10 flex items-center">
+    <div className="flex items-center">
       <div className="relative inline-block">
         <select
           value={lang}
-          onChange={(e) => router.push(`/${e.target.value}`)}
+          onChange={handleLanguageChange}
           className="appearance-none bg-gray-800 text-green-400 border border-green-500 rounded-md pl-4 pr-10 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors cursor-pointer"
         >
           {Object.entries(languages).map(([code, name]) => (

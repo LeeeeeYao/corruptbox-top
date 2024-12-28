@@ -1,35 +1,41 @@
-import { NextResponse } from 'next/server'
-import { match as matchLocale } from '@formatjs/intl-localematcher'
+import { match } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 
+let locales = ['en', 'es', 'hi', 'tl', 'ja', 'ko']
 let defaultLocale = 'en'
-let locales = ['en', 'hi','es','tl']
 
 function getLocale(request) {
-  const negotiatorHeaders = {}
-  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value))
+  const headers = new Headers(request.headers)
+  const acceptLanguage = headers.get('accept-language')
+  if (!acceptLanguage) return defaultLocale
 
-  const languages = new Negotiator({ headers: negotiatorHeaders }).languages()
-  const locale = matchLocale(languages, locales, defaultLocale)
-  return locale
+  const languages = new Negotiator({ headers: { 'accept-language': acceptLanguage } }).languages()
+  
+  try {
+    return match(languages, locales, defaultLocale)
+  } catch (error) {
+    return defaultLocale
+  }
 }
 
 export function middleware(request) {
-  const pathname = request.nextUrl.pathname
-  const pathnameIsMissingLocale = locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+  const { pathname } = request.nextUrl
+  const pathnameHasLocale = locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   )
 
-  if (pathnameIsMissingLocale) {
-    const locale = getLocale(request)
-    return NextResponse.redirect(
-      new URL(`/${locale}/${pathname}`, request.url)
-    )
-  }
+  if (pathnameHasLocale) return
+
+  const locale = getLocale(request)
+  request.nextUrl.pathname = `/${locale}${pathname}`
+  return Response.redirect(request.nextUrl)
 }
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    // Skip all internal paths (_next)
+    '/((?!_next).*)',
+    // Optional: only run on root (/) URL
+    // '/'
   ],
 }

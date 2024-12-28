@@ -15,7 +15,22 @@ export default function ClientPage({ lang, dict }) {
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
-      <LanguageSwitcher lang={lang} />
+      {/* 顶部导航栏 */}
+      <div className="bg-green-500/10 text-green-400 py-2">
+        <div className="container mx-auto px-4 flex justify-between items-center text-sm">
+          <div className="flex items-center">
+            <span className="inline-block w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+            Latest Version
+          </div>
+          <div className="flex items-center space-x-8"> {/* 增加间距 */}
+            <div className="flex items-center">
+              <span className="mr-2">💫</span>
+              Press Ctrl+D to bookmark
+            </div>
+            <LanguageSwitcher lang={lang} /> {/* 移动到这里 */}
+          </div>
+        </div>
+      </div>
       
       {/* Hero Section */}
       <header className="relative flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800" style={{ paddingTop: '20px' }}>
@@ -40,6 +55,21 @@ export default function ClientPage({ lang, dict }) {
           <h2 className="text-4xl font-bold text-green-400 mb-8 text-center">
             {dict.home.gameplay.title}
           </h2>
+          
+          {/* YouTube Video */}
+          <div className="aspect-video w-full max-w-3xl mx-auto mb-12 rounded-xl overflow-hidden shadow-lg">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/s9bVpybskC0"
+              title="How to Play Corruptbox"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
+          </div>
+
           <ul className="space-y-4 text-lg text-gray-300">
             {dict.home.gameplay.steps.items.map((item, index) => (
               <li key={index}>
