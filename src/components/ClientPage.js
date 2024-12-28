@@ -5,6 +5,7 @@ import { useRef } from 'react'
 import LanguageSwitcher from './LanguageSwitcher'
 import GameContainer from './GameContainer'
 import Link from 'next/link'
+import ShareBar from './ShareBar'
 
 export default function ClientPage({ lang, dict }) {
   const gameContainerRef = useRef(null)
@@ -48,6 +49,8 @@ export default function ClientPage({ lang, dict }) {
         </div>
         <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-gray-900 to-transparent"></div>
       </header>
+
+      <ShareBar dict={dict} />
 
       <main className="container mx-auto px-4 py-16 space-y-24">
         {/* How to Play Section */}
